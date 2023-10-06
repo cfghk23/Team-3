@@ -1,11 +1,12 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import React from "react"
+import "./style.css"
+import "tailwindcss/lib/css/preflight.css"
+import AnimationRevealPage from "./helpers/AnimationRevealPage"
+import Hero from "./components/hero/FullWidthWithImage"
+import Login from "./pages/Login"
+import BlogIndexPage from "./pages/BlogIndex"
+import ContestPage from "./pages/ContestPage"
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -40,8 +41,24 @@ const router = createBrowserRouter([
     path: "/students",
     element: <Students />,
   },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/courses",
+    element: <BlogIndexPage />,
+  },
+  {
+    path: "/contest",
+    element: <ContestPage />,
+  },
+  
 ]);
 
+//  <Login />
+//   // <BlogIndexPage/>
+//   <ContestPage/>
 function App() {
   return (
     <div>
@@ -66,33 +83,22 @@ function App() {
 
 export default App;
 
-// import './App.css';
-
-// // We use Route in order to define the different routes of our application
-// import { Route, Routes } from "react-router-dom";
-
-// // We import all the components we need in our app
-// import Navbar from "./components/navbar";
-// import RecordList from "./components/recordList";
-// import Edit from "./components/edit";
-// import Create from "./components/create";
-// import Dashboard from './components/reusable/dashboard';
-
+// // export default App;
+// /* eslint-disable no-unused-vars */
+// import React from "react"
+// import "./style.css"
+// import "tailwindcss/lib/css/preflight.css"
+// import AnimationRevealPage from "./helpers/AnimationRevealPage"
+// import Hero from "./components/hero/FullWidthWithImage"
+// import Login from "./pages/Login"
+// import BlogIndexPage from "./pages/BlogIndex"
+// import ContestPage from "./pages/ContestPage"
 // function App() {
 //   return (
-//     <div>
-//       <Navbar/>
-//       <Routes>
-//         <Route exact path='/' element={<RecordList/>}/>
-//         <Route exact path='/edit/:id' element={<Edit/>}/>
-//         <Route exact path='/create' element={<Create/>}/>
-//         <Route exact path='/dashboard' element={<Dashboard/>}/>
-//       </Routes>
-//       {/* <h1 className=' text-3xl font-bold underline mt-10'>
-//         Hello World!
-//       </h1> */}
-//     </div>
-//   );
+//   //  <Login />
+//   // <BlogIndexPage/>
+//   <ContestPage/>
+//   )
 // }
 
-// export default App;
+// export default App

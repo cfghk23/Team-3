@@ -55,4 +55,6 @@ export default {
       res.send("User Created successfully");
     });
   },
+
+  
 };
