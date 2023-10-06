@@ -38,7 +38,6 @@ function Quiz() {
   };
 
   const currentQuestion = questions[currentQuestionIndex];
-  const isLastQuestion = currentQuestion.id === quizData.length;
 
   // const data = quizData;
 

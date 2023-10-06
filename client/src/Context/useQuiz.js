@@ -29,7 +29,6 @@ export const useQuiz = (quizData) => {
   };
 
   const currentQuestion = questions[currentQuestionIndex];
-
   // Convert options object to array of option strings
   const optionsArray = Object.values(currentQuestion.options);
 
