@@ -11,6 +11,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Quiz from "./components/Quiz";
 import Dashboard from "./components/Dashboard";
+import QuizResult from "./components/quizcomponents/QuizResult";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/quiz",
     element: <Quiz />,
+  },
+  {
+    path: "/quizresult",
+    element: <QuizResult />,
   },
   {
     path: "/dashboard",

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import QuestionCard from './QuestionCard';
 
 export const useQuiz = (quizData) => {
   const [questions] = useState(quizData);
@@ -9,7 +10,6 @@ export const useQuiz = (quizData) => {
     const newAnswers = [...answers];
     newAnswers[currentQuestionIndex] = answerIndex;
     setAnswers(newAnswers);
-
     const nextQuestionIndex = currentQuestionIndex + 1;
     if (nextQuestionIndex < questions.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
@@ -30,8 +30,19 @@ export const useQuiz = (quizData) => {
 
   const currentQuestion = questions[currentQuestionIndex];
 
+  // Convert options object to array of option strings
+  const optionsArray = Object.values(currentQuestion.options);
+
   return {
-    currentQuestion,
+    currentQuestion: {
+      id: currentQuestion.id,
+      question: currentQuestion.text,
+      options: optionsArray,
+      correct: currentQuestion.correct
+    },
     submitAnswer,
+    QuestionCard,
   };
 };
+
+export default useQuiz;
