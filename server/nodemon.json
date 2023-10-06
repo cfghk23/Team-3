@@ -1,0 +1,11 @@
+{
+    "watch": [
+      "src",
+      ".env"
+    ],
+    "ext": "js,json",
+    "ignore": [
+      "src/**/*.spec.js"
+    ],
+    "exec": "clear; node ./src/app.js"
+  }
