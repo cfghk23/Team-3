@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import StudentsTable from "../tables/StudentsTable";
 
 const GraphA = () => <div>Graph A</div>;
 const GraphB = () => <div>Graph B</div>;
@@ -145,8 +146,7 @@ function Students() {
               ) : (
                 <>
                   <h3 style={{ fontSize: "40px" }}>Students Performance</h3>
-                  <GraphA />
-                  <GraphB />
+                  <StudentsTable/>
                 </>
               )}
             </div>
