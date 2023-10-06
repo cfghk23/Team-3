@@ -78,8 +78,8 @@ function Quiz() {
         </div>
       </div>
       <div className='flex flex-row justify-between'>
-        <CourseTable/>
-        <WorstCourseTable/>
+        {/* <CourseTable/>
+        <WorstCourseTable/> */}
       </div>
     </div>
   )

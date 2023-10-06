@@ -3,9 +3,11 @@ import { Table, TableBody, TableCell, TableHead, TableRow, Paper } from '@mui/ma
 
 function CourseTable() {
     const courses = [
-        { name: "Mathematics", averageScore: 8, rank: 1 },
-        { name: "English", averageScore: 7, rank: 2 },
-        { name: "Science", averageScore: 6, rank: 3 },
+        { name: "Investing", averageScore: 60, rank: 1 },
+        { name: "Helping Others", averageScore: 59, rank: 2 },
+        { name: "Savings", averageScore: 50, rank: 3 },
+        // { name: "History of Money", averageScore: 47, rank: 4 },
+        // { name: "Needs and Wants", averageScore: 35, rank: 5 },
         //... add more courses as needed
     ];
 

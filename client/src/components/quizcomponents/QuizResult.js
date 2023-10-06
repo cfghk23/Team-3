@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import quizData from '../context/QuizContext';
+import { quizData } from '../../Context/QuizContext';
+// import quizData from '../context/QuizContext';
 
 function QuizResult() {
   const location = useLocation();
   const [answers] = useState(location.state?.answers ?? []);
+
 
   const numCorrect = answers.reduce((acc, curr, idx) => {
     return curr === quizData[idx].options[quizData[idx].correct] ? acc + 1 : acc;

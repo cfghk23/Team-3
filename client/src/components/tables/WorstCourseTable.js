@@ -4,9 +4,11 @@ import { Table, TableBody, TableCell, TableHead, TableRow, Paper } from '@mui/ma
 function WorstCourseTable() {
     const courses = [
 
-        { name: "Science", averageScore: 6, rank: 3 },
-        { name: "English", averageScore: 7, rank: 2 },
-        { name: "Mathematics", averageScore: 8, rank: 1 },
+        { name: "Needs and Wants", averageScore: 35, rank: 5 },
+        { name: "History of Money", averageScore: 47, rank: 4 },
+        { name: "Savings", averageScore: 50, rank: 3 },
+        // { name: "Helping Others", averageScore: 59, rank: 2 },
+        // { name: "Investing", averageScore: 60, rank: 1 },
         //... add more courses as needed
     ];
 
