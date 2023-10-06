@@ -1,10 +1,15 @@
 import openai
 import json
+import os
+
+# hide api  key using environment variable
+from dotenv import load_dotenv
+load_dotenv()
 
 openai.api_type = "azure"
 openai.api_base = "https://hkust.azure-api.net"
 openai.api_version = "2023-05-15"
-openai.api_key = "d2013e1"
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 prompt_sentence = """generate 5 questions for me regarding the topic of %s for %s level, 
 give me the result in the format of json string like for json parse:
