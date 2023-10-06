@@ -8,10 +8,6 @@ import Login from "./pages/Login"
 import BlogIndexPage from "./pages/BlogIndex"
 import ContestPage from "./pages/ContestPage"
 
-import Login from "./pages/Login"
-import BlogIndexPage from "./pages/BlogIndex"
-import ContestPage from "./pages/ContestPage"
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Quiz from "./components/Quiz";
