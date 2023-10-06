@@ -4,16 +4,15 @@ import {quizData} from '../Context/QuizContext';
 import Pagination from '@mui/material/Pagination';
 import CourseTable from './tables/BestCourseTable';
 import WorstCourseTable from './tables/WorstCourseTable';
-
+import { useNavigate } from 'react-router-dom';
 
 function Quiz() {
   const [questions] = useState(quizData);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(1);
   const [answers, setAnswers] = useState([]);
+  const navigate = useNavigate();
 
   const submitAnswer = (answerIndex) => {
-
-
     
     const newAnswers = [...answers];
     newAnswers[currentQuestionIndex] = answerIndex;
@@ -24,6 +23,7 @@ function Quiz() {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
       calculateScore();
+      navigate('/quizresult', { state: { answers } });
     }
   };
 
@@ -38,6 +38,7 @@ function Quiz() {
   };
 
   const currentQuestion = questions[currentQuestionIndex];
+  const isLastQuestion = currentQuestion.id === quizData.length;
 
   // const data = quizData;
 
