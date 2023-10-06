@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import quizData from '../context/QuizContext';
+// import quizData from '../context/QuizContext';
+import {quizData} from '../../Context/QuizContext';
 
 function QuizResult() {
   const location = useLocation();
