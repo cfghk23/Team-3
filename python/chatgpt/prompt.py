@@ -8,14 +8,30 @@ openai.api_key = "d2013e1"
 
 prompt_sentence = """generate 5 questions for me regarding the topic of %s for %s level, 
 give me the result in the format of json string like for json parse:
-[{
-    'question': question,
-    'choices': ['A. xxx', ... 'D. xxx'],
-    'answer': answer
-},
-{
-xxx
-}]
+[
+    {
+        "id": 1,
+        "text": question1,
+        "options": {
+            "A": choiceA,
+            "B": choiceB,
+            "C": choiceC,
+            "D": choiceD
+        },
+        "correct": "C"
+    },
+    {
+        "id": 1,
+        "text": question1,
+        "options": {
+            "A": choiceA,
+            "B": choiceB,
+            "C": choiceC,
+            "D": choiceD
+        },
+        "correct": "C"
+    },
+]
 """
 
 def prompt(topic, level):
@@ -29,14 +45,26 @@ def prompt(topic, level):
                 give the example in the format a list of json:
                 [
                     {
-                        “question”: question1,
-                        “choices”: ['A. choiceA', ... 'D. choiceD'],
-                        “ans”: 'A. xxx'
+                        "id": 1,
+                        "text": question1,
+                        "options": {
+                            "A": choiceA,
+                            "B": choiceB,
+                            "C": choiceC,
+                            "D": choiceD
+                        },
+                        "correct": "C"
                     },
                     {
-                        "question": question2,
-                        "choices": ['A. choiceA', ... 'D. choiceD'],
-                        "ans": 'A. xxx'
+                        "id": 1,
+                        "text": question1,
+                        "options": {
+                            "A": choiceA,
+                            "B": choiceB,
+                            "C": choiceC,
+                            "D": choiceD
+                        },
+                        "correct": "C"
                     }
                 ]
                 """
@@ -46,8 +74,9 @@ def prompt(topic, level):
     try:
         resp = response["choices"][0]["message"]["content"].replace("```", "'")
         resp = resp[resp.find("["): resp.rfind("]")+1]
-        print(resp)
         data = json.loads(resp)
+        for question in resp:
+            question["type"] = "question"
         print(data)
         print(type(data))
         return data
