@@ -16,18 +16,26 @@ function Dashboard() {
     display: "flex",
     justifyContent: "center",
   };
+  const profilePictureStyle = {
+    width: "40px",
+    height: "40px",
+    borderRadius: "50%",
+    backgroundColor: "gray",
+    top: "-20px",
+    right: "0",
+  };
 
   return (
     <div className="dashboard">
       {/* Create the button group */}
+      <div style={profilePictureStyle} />
       <div style={buttonGroupStyle}>
-        <button style={buttonStyle}>Button 1</button>
-        <button style={buttonStyle}>Button 2</button>
-        <button style={buttonStyle}>Button 3</button>
+        <button style={buttonStyle}>Courses Analytics</button>
+        <button style={buttonStyle}>Students Performance</button>
+        <button style={buttonStyle}>Add modules</button>
       </div>
 
       {/* Create the profile picture */}
-      <img src="path/to/profile/picture.jpg" className="profile-picture" />
     </div>
   );
 }
