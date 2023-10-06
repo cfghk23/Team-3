@@ -1,59 +1,81 @@
-const quizData = [
+export const quizData = 
+  [
     {
-      "id": 1,
-      "text": "What is a budget?",
-      "options": {
-        "A": "A plan for how you will spend your money",
-        "B" : "A type of bank account",
-        "C" : "A way to earn interest on your savings",
-        "D" : "A type of credit card"
-      },
-      "correct": 0
+        "id": 1,
+        "text": "Why is it a good idea to save money?",
+        "options": {
+            "A": "So you can buy toys whenever you want",
+            "B": "To have money for things you need or want in the future",
+            "C": "Because money is shiny",
+            "D": "To show off to friends"
+        },
+        "correct": "B",
+        "type": "question"
     },
     {
-      "id": 2,
-      "text": "What is the difference between a need and a want?",
-      "options": {
-        "A": "A need is something you have to have in order to live, a want is something you would like to have",
-        "B": "A need is something you would like to have, a want is something you have to have in order to live",
-        "C": "A need and a want are the same thing",
-        "D" : "A need is something you buy at a store, a want is something you make at home"
-      },
-      "correct": 'A'
+        "id": 2,
+        "text": "Where can you keep your money safe?",
+        "options": {
+            "A": "Under your bed",
+            "B": "In a toy box",
+            "C": "In a piggy bank",
+            "D": "Outside in the garden"
+        },
+        "correct": "C",
+        "type": "question"
     },
     {
-      "id": 3,
-      "text": "What is interest?",
-      "options": {
-        "A" : "The cost of borrowing money",
-        "B" : "The amount of money you have in your bank account",
-        "C" : "The amount of money you owe on a loan",
-        "D" : "The amount of money you earn from your job"
-      },
-      "correct": 'B'
+        "id": 3,
+        "text": "What does it mean to 'earn' money?",
+        "options": {
+            "A": "Finding it on the ground",
+            "B": "Getting it as a gift",
+            "C": "Working or doing chores to get money",
+            "D": "Trading toys for money"
+        },
+        "correct": "C",
+        "type": "video",
+        "link": "https://www.youtube.com/embed/Vgqhhca11-U?si=vapeWCme9Lqjdeqh"
     },
     {
-      "id": 4,
-      "text": "What is a savings account?",
-      "options": {
-        "A" : "A type of bank account that allows you to save money and earn interest on your savings",
-        "B" : "A type of credit card",
-        "C" : "A type of investment",
-        "D" : "A type of loan"
-      },
-      "correct": 'C'
+        "id": 4,
+        "text": "What is a 'budget'?",
+        "options": {
+            "A": "A type of bug",
+            "B": "A plan for how you spend and save money",
+            "C": "Money you find in the couch",
+            "D": "A type of toy"
+        },
+        "correct": "B",
+        "type": "question"
     },
     {
-      "id": 5,
-      "text": "What is a credit card?",
+        "id": 5,
+        "text": "If you want to buy a toy that costs $10 and you have $7, how much more money do you need?",
+        "options": {
+            "A": "$2",
+            "B": "$5",
+            "C": "$3",
+            "D": "$10"
+        },
+        "correct": "C",
+        "type": "question"
+    },
+    {
+      "id": 6,
+      "text": "Knowledge Time",
       "options": {
-        "A": "A type of payment card that allows you to borrow money to make purchases",
-        "B": "A type of savings account",
-        "C": "A type of investment",
-        "D": "A type of loan"
+          "A": "$2",
+          "B": "$5",
+          "C": "$3",
+          "D": "$10"
       },
-      "correct": 'D'
-    }
+      "correct": "C",
+      "type": "info",
+      "info": "Finance refers to the management of money, including activities such as investing, borrowing, lending, budgeting, and saving. It encompasses both public finance, which deals with government funds and expenditures, and personal finance, which involves individuals making monetary decisions to meet their goals."
+  }
+
+]
     // },
     // {
     //   "id": 6,
@@ -99,4 +121,3 @@ const quizData = [
     //   ],
     //   "correct": 0
     // }
-  ];
