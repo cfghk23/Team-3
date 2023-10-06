@@ -1,0 +1,2 @@
+ssh -i ./Team-3.pem force@ec2-54-251-65-13.ap-southeast-1.compute.amazonaws.com
+
