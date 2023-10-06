@@ -7,6 +7,10 @@ import { Route, Routes } from "react-router-dom";
 //   Link
 // } from "react-router-dom";
 
+import Login from "./pages/Login"
+import BlogIndexPage from "./pages/BlogIndex"
+import ContestPage from "./pages/ContestPage"
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Quiz from "./components/Quiz";
@@ -24,8 +28,23 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
   },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/courses",
+    element: <BlogIndexPage />,
+  },
+  {
+    path: "/contest",
+    element: <ContestPage />,
+  },
 ]);
 
+//  <Login />
+//   // <BlogIndexPage/>
+//   <ContestPage/>
 function App() {
   return (
     <div>
