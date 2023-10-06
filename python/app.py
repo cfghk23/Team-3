@@ -14,8 +14,9 @@ def result(code, message, data = None):
 @app.post("/api/prompt")
 def generate_question():
     print(request.json)
-    message = request.json["message"]
-    resp = prompt(message)
+    topic = request.json["topic"]
+    level = request.json["level"]
+    resp = prompt(topic, level)
     if resp:
         return result(200, "success", resp)
     return result(400, "failed in generating question")
