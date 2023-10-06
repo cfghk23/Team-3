@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-anonymous-default-export */
+import { Link } from 'react-router-dom';
 import React from "react";
 import AnimationRevealPage from "../helpers/AnimationRevealPage.js";
 import { Container as ContainerBase } from "../components/misc/Layouts.js";
@@ -115,7 +116,7 @@ const Login = ({
             <MainContent>
               <Heading>{headingText}</Heading>
               <FormContainer>
-                <SocialButtonsContainer>
+                {/* <SocialButtonsContainer>
                   {socialButtons.map((socialButton, index) => (
                     <SocialButton key={index} href={socialButton.url}>
                       <span className="iconContainer">
@@ -128,15 +129,18 @@ const Login = ({
                       <span className="text">{socialButton.text}</span>
                     </SocialButton>
                   ))}
-                </SocialButtonsContainer>
+                </SocialButtonsContainer> */}
                 <DividerTextContainer>
-                  <DividerText>Or Sign in with your e-mail</DividerText>
+                  <DividerText>Sign in with your e-mail</DividerText>
                 </DividerTextContainer>
                 {/* <Form onSubmit={handleSubmit}> */}
                 <Form >
                   <Input type="email" placeholder="Email" />
                   <Input type="password" placeholder="Password" />
-                  <SubmitButton type="submit">
+                  <SubmitButton type="submit"
+                  as={Link} to="/contest"
+                   
+                  >
                     <SubmitButtonIcon className="icon" />
                     <span className="text">{submitButtonText}</span>
                   </SubmitButton>
