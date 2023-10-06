@@ -13,7 +13,10 @@ function WorstCourseTable() {
     ];
 
     return (
-        <Paper elevation={3}>
+        <div>
+            <h1 className='my-2 text-xl font-bold'>Worst Performing Course</h1>
+            <Paper elevation={3}>
+            
             <Table>
                 <TableHead>
                     <TableRow>
@@ -35,6 +38,9 @@ function WorstCourseTable() {
                 </TableBody>
             </Table>
         </Paper>
+
+        </div>
+        
     );
 }
 

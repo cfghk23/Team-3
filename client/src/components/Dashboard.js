@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import CourseTable from "./tables/BestCourseTable";
+import WorstCourseTable from "./tables/WorstCourseTable";
+import image1 from '../images/2.jpg';
+import image2 from '../images/3.jpg';
 
 const GraphA = () => <div>Graph A</div>;
 const GraphB = () => <div>Graph B</div>;
@@ -145,8 +149,16 @@ function Dashboard() {
               ) : (
                 <>
                   <h3 style={{ fontSize: "40px" }}>General Analytics</h3>
-                  <GraphA />
-                  <GraphB />
+                  {/* <GraphA />
+                  <GraphB /> */}
+                  <div className='flex flex-row  w-full my-10'>
+                    <CourseTable className='m-10'/>
+                    <WorstCourseTable className='m-12'/>
+                  </div>
+                  <div className="flex flex-row w-full my-10">
+                    <img src={image1} className='w-5/12'/>
+                    <img src={image2} className='w-5/12'/>
+                  </div>
                 </>
               )}
             </div>

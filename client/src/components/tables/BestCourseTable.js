@@ -12,16 +12,18 @@ function CourseTable() {
     ];
 
     return (
-        <Paper elevation={3}>
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Course Name</TableCell>
-                        <TableCell align="right">Average Score (out of 10)</TableCell>
-                        <TableCell align="right">Rank</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
+        <div className='mx-10'>
+            <h1 className='my-2 text-xl font-bold'>Top Performing Course</h1>
+            <Paper elevation={3}>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Course Name</TableCell>
+                            <TableCell align="right">Average Score (out of 10)</TableCell>
+                            <TableCell align="right">Rank</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
                     {courses.map((course) => (
                         <TableRow key={course.name}>
                             <TableCell component="th" scope="row">
@@ -33,7 +35,9 @@ function CourseTable() {
                     ))}
                 </TableBody>
             </Table>
-        </Paper>
+            </Paper>
+        </div>
+        
     );
 }
 

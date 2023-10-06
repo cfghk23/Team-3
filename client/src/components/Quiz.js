@@ -77,10 +77,7 @@ function Quiz() {
           <Pagination count={quizData.length - 1} page={currentQuestionIndex} hideNextButton hidePrevButton color='secondary'/>
         </div>
       </div>
-      <div className='flex flex-row justify-between'>
-        {/* <CourseTable/>
-        <WorstCourseTable/> */}
-      </div>
+      
     </div>
   )
 }
