@@ -6,26 +6,34 @@ openai.api_base = "https://hkust.azure-api.net"
 openai.api_version = "2023-05-15"
 openai.api_key = "d2013e1"
 
-prompt_sentence = """
-
+prompt_sentence = """generate 10 questions for me regarding the topic of %s for %s level, 
+give me the result in the format of json string like for json parse:
+[{
+    'question': question,
+    'choices': ['A. xxx', ... 'D. xxx'],
+    'answer': answer
+},
+{
+xxx
+}],
+do not include other response apart from the json string
 """
 
-def prompt(message):
+def prompt(topic, level):
     response = openai.ChatCompletion.create(
         engine="gpt-35-turbo",
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": message}
+            {"role": "system", "content": "You are a helpful teacher."},
+            {"role": "user", "content": prompt_sentence % (topic, level)},
+            {"role": "assistant", "content": ""}
         ]
     )
     try:
-        resp = response["choices"][0]["message"]["content"]
-        data = json.loads(f'{resp}')
+        resp = response["choices"][0]["message"]["content"].replace("json", ""). replace("```", "'").replace("\n", "")
+        print(resp)
+        data = json.loads(resp)
+        print(type(data))
         return data
     except Exception as e:
         print(e)
     return None
-
-if __name__ == '__main__':
-    prompt("generate a question regarding the finance and give me 4 answers as well as the correct ans for me, "
-           "your response should be in json format, i.e., {'question': question, 'choices': [choice1....choice4], 'correct_ans': ans}")
