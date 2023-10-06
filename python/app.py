@@ -1,7 +1,6 @@
 from flask import Flask, request
 from chatgpt.prompt import prompt
 
-
 app = Flask(__name__)
 
 def result(code, message, data = None):
@@ -21,4 +20,4 @@ def generate_question():
     return result(400, "failed in generating question")
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    app.run(port=5111)
