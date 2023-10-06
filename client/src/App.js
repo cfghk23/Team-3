@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import { Route, Routes } from "react-router-dom";
 // import {
 //   BrowserRouter as Router,
@@ -7,21 +7,23 @@ import { Route, Routes } from "react-router-dom";
 //   Link
 // } from "react-router-dom";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Quiz from './components/Quiz';
+import Quiz from "./components/Quiz";
+import Dashboard from "./components/Dashboard";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <div>Hello world!</div>,
   },
   {
-    path: '/quiz',
-    element: <Quiz/>
-  }
+    path: "/quiz",
+    element: <Quiz />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
 ]);
 
 function App() {
@@ -48,13 +50,11 @@ function App() {
 
 export default App;
 
-
-
 // import './App.css';
 
 // // We use Route in order to define the different routes of our application
 // import { Route, Routes } from "react-router-dom";
- 
+
 // // We import all the components we need in our app
 // import Navbar from "./components/navbar";
 // import RecordList from "./components/recordList";
