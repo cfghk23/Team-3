@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-anonymous-default-export */
 import React, { useState } from "react";
 import AnimationRevealPage from "../helpers/AnimationRevealPage.js";
