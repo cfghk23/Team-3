@@ -10,7 +10,6 @@ function QuizResult() {
     return curr === quizData[idx].options[quizData[idx].correct] ? acc + 1 : acc;
   }, 0);
 
-
   return (
     <div>
       <h1>Results</h1>
