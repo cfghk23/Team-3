@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import QuestionCard from './quizcomponents/QuestionCard'
 import {quizData} from '../Context/QuizContext';
 import Pagination from '@mui/material/Pagination';
+import CourseTable from './tables/BestCourseTable';
+import WorstCourseTable from './tables/WorstCourseTable';
 
 
 function Quiz() {
@@ -73,7 +75,10 @@ function Quiz() {
         <div className='m-10'>
           <Pagination count={quizData.length - 1} page={currentQuestionIndex} hideNextButton hidePrevButton color='secondary'/>
         </div>
-        
+      </div>
+      <div className='flex flex-row justify-between'>
+        <CourseTable/>
+        <WorstCourseTable/>
       </div>
     </div>
   )
