@@ -13,6 +13,7 @@ import Quiz from "./components/Quiz";
 import Dashboard from "./components/Dashboard";
 import AddModule from "./components/dashboard/addmodule";
 import Students from "./components/dashboard/student";
+import QuizResult from "./components/quizcomponents/QuizResult";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/quiz",
     element: <Quiz />,
+  },
+  {
+    path: "/quizresult",
+    element: <QuizResult />,
   },
   {
     path: "/dashboard",

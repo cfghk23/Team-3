@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 import QuestionCard from './quizcomponents/QuestionCard'
 import {quizData} from '../Context/QuizContext';
 import Pagination from '@mui/material/Pagination';
-
+import CourseTable from './tables/BestCourseTable';
+import WorstCourseTable from './tables/WorstCourseTable';
+import { useNavigate } from 'react-router-dom';
 
 function Quiz() {
   const [questions] = useState(quizData);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(1);
   const [answers, setAnswers] = useState([]);
+  const navigate = useNavigate();
 
   const submitAnswer = (answerIndex) => {
-
-
     
     const newAnswers = [...answers];
     newAnswers[currentQuestionIndex] = answerIndex;
@@ -22,6 +23,7 @@ function Quiz() {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
       calculateScore();
+      navigate('/quizresult', { state: { answers } });
     }
   };
 
@@ -36,6 +38,7 @@ function Quiz() {
   };
 
   const currentQuestion = questions[currentQuestionIndex];
+  const isLastQuestion = currentQuestion.id === quizData.length;
 
   // const data = quizData;
 
@@ -73,7 +76,10 @@ function Quiz() {
         <div className='m-10'>
           <Pagination count={quizData.length - 1} page={currentQuestionIndex} hideNextButton hidePrevButton color='secondary'/>
         </div>
-        
+      </div>
+      <div className='flex flex-row justify-between'>
+        <CourseTable/>
+        <WorstCourseTable/>
       </div>
     </div>
   )
